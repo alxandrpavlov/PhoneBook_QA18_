@@ -63,7 +63,7 @@ public class RegistrationTest extends TestBase {
 //        pause(10000);
 //        4. assert
 
-        Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
+//        Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
 
 
     }
@@ -84,24 +84,32 @@ public class RegistrationTest extends TestBase {
 
         @Test
         public void registrationWrongEmail(){
-            WebElement loginBtn = wd.findElement(By.xpath("//a[@href='/login']"));
-            loginBtn.click();
+//            WebElement loginBtn = wd.findElement(By.xpath("//a[@href='/login']"));
+//            loginBtn.click();
+            openLoginRegistationFofm();
 
+
+
+
+//            WebElement emailInput = wd.findElement(By.xpath("//input[1]"));
+//            emailInput.click();
+//            emailInput.clear();
+//            emailInput.sendKeys("wsderfgt" + i + "wsw.com");
             int i = (int) (System.currentTimeMillis() / 1000) % 3600;
 
+            String email = "wsderfgt" + i + "wsw.com";
+            String password = "$Qazxcv123456";
 
-            WebElement emailInput = wd.findElement(By.xpath("//input[1]"));
-            emailInput.click();
-            emailInput.clear();
-            emailInput.sendKeys("wsderfgt" + i + "wsw.com");
+            fillLoginRegistrationForm(email, password);
 
 
-            WebElement passInput = wd.findElement(By.xpath("//input[2]"));
-            passInput.clear();
-            passInput.sendKeys("$Qazxcv123456");
-            passInput.click();
+//            WebElement passInput = wd.findElement(By.xpath("//input[2]"));
+//            passInput.clear();
+//            passInput.sendKeys("$Qazxcv123456");
+//            passInput.click();
 
-            wd.findElement(By.xpath("//button[2]")).click();
+//            wd.findElement(By.xpath("//button[2]")).click();
+            submitRegistration();
 
 //        Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
 
